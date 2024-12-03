@@ -12,15 +12,9 @@ def lst_diff(lst):
     return True
 
 def is_ascending_or_descending(lst):
-    ascension_score = 0
-    descending_score = 0
-    for x in range(1, len(lst)):
-        if (lst[x] - lst[x - 1]) > 0:
-            ascension_score += 1
-    for x in range(1, len(lst)):
-        if (lst[x] - lst[x - 1]) < 0:
-            descending_score += 1
-    if len(lst) -1 == ascension_score  or len(lst) -1 == descending_score:
+    if sorted(lst) == lst and len(set(lst)) == len(lst):
+        return True
+    elif sorted(lst, reverse=True) == lst and len(set(lst)) == len(lst):
         return True
     else:
         return False
