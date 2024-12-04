@@ -34,7 +34,7 @@ def rotator(matrix):
         total_count += diagonal_checker(matrix)
         matrix = np.rot90(matrix)
     return total_count
-#
+
 def mas_check(matrix):
     """check for mas cross"""
     xmas_count = 0
@@ -56,7 +56,6 @@ def mas_rotator(matrix):
         matrix = np.rot90(matrix)
     return total_count
 
-
 with open("data.txt") as f:
     wordsearch = f.read().split("\n")
     wordsearch = [list(word) for word in wordsearch]
@@ -64,7 +63,6 @@ with open("data.txt") as f:
 
 #part1
 print(rotator(wordsearch))
-
 #part2
 print(mas_rotator(wordsearch))
 
